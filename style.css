@@ -1,0 +1,81 @@
+/* style.css */
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000005; /* Light background */
+    margin: 0; /* Remove default margins */
+}
+
+.game-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center content */
+}
+
+.color-box {
+    width: 150px;
+    height: 150px;
+    margin: 50px auto; /* Center the box */
+    border: 10px /*solid #ccc;*/
+}
+
+.color-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on larger screens */
+    gap: 11px;
+    margin-bottom: 20px;
+}
+
+.color-options button {
+    width: 100px;
+    height: 100px;
+    border: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease; /* Add a hover effect */
+}
+
+.color-options button:hover {
+    transform: scale(1.2);
+}
+
+.game-info {
+    margin-top: 10px;
+}
+
+/* Responsive design - adjust columns for smaller screens */
+@media (max-width: 600px) {
+    .color-options {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+}
+
+
+/* Animations (Example) */
+.correct-animation {
+  animation: correct 0.5s ease-in-out;
+  opacity: 1;
+}
+
+  @keyframes correct {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+  
+
+
+.incorrect-animation {
+  animation: incorrect 0.5s ease-in-out;
+  opacity: 1;
+}
+
+@keyframes incorrect {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
